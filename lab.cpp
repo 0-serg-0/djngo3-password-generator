@@ -34,7 +34,7 @@ void lab_4_v17()
 }
 
 void lab_5()
-{
+{	
 	float t=0.1, i=-0.5;
 	int n=1;
 	
@@ -65,9 +65,36 @@ void lab_6()
 	std::cout<<"yi<1.2 & n%2!=0 -->N="<<con<<" sum n%2==0  N="<<sum_;
 }
 
+
+void lab_7()
+{	
+	char c[]="asdoo ooo oo asdooo ooasa oooosdd.";
+	int con = 0,f=0,g=0;
+    
+    for(int i=0;i<strlen(c);i=i+1)
+    {   
+        if(c[i]=='o') con=con + 1;
+        if(c[i]==' '||c[i]=='.')
+		{
+            if(con!=0) f=f + 1;
+            con=0;
+        }
+    }
+    int N[f];
+    for(int i;i<strlen(c);i=i + 1)
+    {
+        if(c[i]=='o') con=con + 1;
+        if(c[i]==' '||c[i]=='.') {N[g]=con;con=0;g=g+1;}
+    }
+    for(int i;i<f;i=i + 1) std::cout<<N[i]<<" количество o в "<<i + 1<<" слове"<<std::endl;
+    return 0;
+}
+
+
+
 int main()
 {	
-
+	
 
 }
 
