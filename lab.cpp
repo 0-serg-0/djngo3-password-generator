@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
+#include <fstream>
 
 int lab_2()
 {	
@@ -89,6 +90,32 @@ void lab_7()
     }
     for(int i;i<f;i=i + 1) std::cout<<N[i]<<" количество o в "<<i + 1<<" слове"<<std::endl;
     return 0;
+}
+
+void lab_8()
+{	
+	char a;
+	int e = 3;
+	//чтения 
+	std::fstream F;
+	F.open("s.txt");
+
+	//запись
+	std::ofstream f;
+	f.open("u.txt", std::ios::out);
+
+	while (!F.eof())
+	{	
+		F>>a;
+		if(islower(a)) a = 'a'+(a-'a'+e)%26;
+		if(isupper(a)) a = 'A'+(a-'A'+e)%26;
+		
+		f<<a;
+	}
+
+	F.close();
+	f.close();
+	system("pause");
 }
 
 
